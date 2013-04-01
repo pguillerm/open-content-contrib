@@ -1,15 +1,91 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <!--
+    ============================================================================
+    = PROJECT INFORMATIONS
+    ============================================================================
+  -->
+    <modelVersion>4.0.0</modelVersion>
     <parent>
         <artifactId>openContentContrib-features</artifactId>
         <groupId>org.open.content.contrib</groupId>
         <version>0.1-SNAPSHOT</version>
     </parent>
-    <modelVersion>4.0.0</modelVersion>
 
     <artifactId>openContentContrib-core</artifactId>
+    <packaging>jar</packaging>
+
+  <!--
+    ============================================================================
+    = DEPENDENCY
+    ============================================================================
+  -->
+    <dependencies>
+
+    <!--:::::::::::::::::::::: project dependency :::::::::::::::::::::::::::-->
+        <dependency>
+            <groupId>org.open.content.contrib</groupId>
+            <artifactId>openContentContrib-core-commons</artifactId>
+        </dependency>
 
 
+
+    <!--:::::::::::::::::::::::: lib dependency :::::::::::::::::::::::::::::-->
+
+        <dependency>
+            <groupId>org.primefaces</groupId>
+            <artifactId>primefaces</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.ocpsoft</groupId>
+            <artifactId>ocpsoft-pretty-time</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.ocpsoft</groupId>
+            <artifactId>prettyfaces-jsf2</artifactId>
+        </dependency>
+
+
+        <dependency>
+            <groupId>org.jboss.seam.validation</groupId>
+            <artifactId>seam-validation</artifactId>
+            <scope>compile</scope>
+        </dependency>
+        
+        <!--:::::::::::::::::::::::: test dependency :::::::::::::::::::::::::::::-->
+        <dependency>
+            <groupId>org.open.content.contrib</groupId>
+            <artifactId>openContentContrib-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+
+    </dependencies>
+    
+
+  <!--
+    ============================================================================
+    = DEPENDENCY
+    ============================================================================
+  -->
+    <build>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>true</filtering>
+            </resource>
+        </resources>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>1.7</source>
+                    <target>1.7</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 </project>

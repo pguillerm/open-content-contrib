@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
 
     <modelVersion>4.0.0</modelVersion>
@@ -36,6 +36,7 @@
 
         <seam.version>3.1.0.Final</seam.version>
         <seam-parent.version>19</seam-parent.version>
+        <modeshape.version>3.1.3.Final</modeshape.version>
         <richfaces.version>4.2.0.CR1</richfaces.version>
         <freemarker.version>2.3.16</freemarker.version>
         <primefaces.version>3.2</primefaces.version>
@@ -45,7 +46,9 @@
         <commons-io.version>2.1</commons-io.version>
         <junit.version>4.10</junit.version>
         <derby.version>10.8.2.2</derby.version>
-
+        <slf4j.version>1.7.3</slf4j.version>
+        <hsqldb.version>1.8.0.7</hsqldb.version>
+        <base64.version>2.3.8</base64.version>
     </properties>
 
 
@@ -55,7 +58,12 @@
       ============================================================================
     -->
     <modules>
-
+        <module>openContentContrib-test</module>
+        <module>openContentContrib-bootstrap</module>
+        <module>openContentContrib-core</module>
+        <module>openContentContrib-core-commons</module>
+        <module>openContentContrib-datamodel</module>
+        <module>openContentContrib-war</module>
     </modules>
 
 
@@ -102,6 +110,54 @@
         <dependencies>
             <!--
             ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+            + PROJECT DEPENDENCIES
+            ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+            -->
+            <dependency>
+                <groupId>org.open.content.contrib</groupId>
+                <artifactId>openContentContrib-test</artifactId>
+                <version>${project.version}</version>
+                <type>jar</type>
+            </dependency>
+
+            <dependency>
+                <groupId>org.open.content.contrib</groupId>
+                <artifactId>openContentContrib-bootstrap</artifactId>
+                <version>${project.version}</version>
+                <type>jar</type>
+            </dependency>
+
+            <dependency>
+                <groupId>org.open.content.contrib</groupId>
+                <artifactId>openContentContrib-core</artifactId>
+                <version>${project.version}</version>
+                <type>jar</type>
+            </dependency>
+
+            <dependency>
+                <groupId>org.open.content.contrib</groupId>
+                <artifactId>openContentContrib-core-commons</artifactId>
+                <version>${project.version}</version>
+                <type>jar</type>
+            </dependency>
+
+            <dependency>
+                <groupId>org.open.content.contrib</groupId>
+                <artifactId>openContentContrib-datamodel</artifactId>
+                <version>${project.version}</version>
+                <type>jar</type>
+            </dependency>
+
+            <dependency>
+                <groupId>org.open.content.contrib</groupId>
+                <artifactId>openContentContrib-war</artifactId>
+                <version>${project.version}</version>
+                <type>jar</type>
+            </dependency>
+            
+            
+            <!--
+            ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
             + SEAM DEPENDENCIES
             ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
             -->
@@ -134,11 +190,28 @@
                 </exclusions>
             </dependency>
 
-            <!--
-            ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-            + PROJECT DEPENDENCIES
-            ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-            -->
+            <dependency>
+                <groupId>org.jboss.seam.solder</groupId>
+                <artifactId>seam-solder</artifactId>
+                <version>3.0.0.Final</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.jboss.seam.servlet</groupId>
+                <artifactId>seam-servlet</artifactId>
+                <version>3.0.0.Final</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.modeshape.bom</groupId>
+                <artifactId>modeshape-bom-embedded</artifactId>
+                <version>${modeshape.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+        
+        
 
 
             <!--
@@ -237,7 +310,7 @@
             <dependency>
                 <groupId>hsqldb</groupId>
                 <artifactId>hsqldb</artifactId>
-                <version>1.8.0.7</version>
+                <version>${hsqldb.version}</version>
                 <scope>test</scope>
             </dependency>
 
@@ -250,7 +323,7 @@
             <dependency>
                 <groupId>net.iharder</groupId>
                 <artifactId>base64</artifactId>
-                <version>2.3.8</version>
+                <version>${base64.version}</version>
             </dependency>
         </dependencies>
 
@@ -271,6 +344,15 @@
             <version>${seam-parent.version}</version>
             <type>pom</type>
         </dependency>
+
+        <dependency>
+            <groupId>org.modeshape.bom</groupId>
+            <artifactId>modeshape-bom-embedded</artifactId>
+            <version>${modeshape.version}</version>
+            <type>pom</type>
+            <scope>import</scope>
+        </dependency>
+
 
         <dependency>
             <groupId>org.jboss.seam</groupId>
@@ -354,10 +436,17 @@
                     </execution>
                 </executions>
             </plugin>
+
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>1.7</source>
+                    <target>1.7</target>
+                </configuration>
             </plugin>
+
+
         </plugins>
     </build>
 
