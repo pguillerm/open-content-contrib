@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <!--
+    ============================================================================
+    = MAIN PROJECT INFORMATIONS
+    ============================================================================
+    -->
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>open-content-contrib</groupId>
+    <artifactId>open-content-contrib</artifactId>
+    <version>0.1-SNAPSHOT</version>
+    <name>Open Content Contrib</name>
+
+
+    <!--
+      ============================================================================
+      = MAIN PROJECT PROPERTIES
+      ============================================================================
+    -->
+    <properties>
+        <project.version>0.1-SNAPSHOT</project.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <pom.organization.name>OpenCnontentContrib</pom.organization.name>
+    </properties>
+
+
+    <!--
+      ============================================================================
+      = MAIN PROJECT MODULES
+      ============================================================================
+    -->
+    <modules>
+        <module>openContentContrib-features</module>
+    </modules>
+
+
+    <!--
+      ============================================================================
+      = ORGANIZATION INFORMATIONS
+      ============================================================================
+    -->
+    <organization>
+        <name>OpenContentContrib</name>
+        <url>https://github.com/pguillerm/open-content-contrib</url>
+    </organization>
+    <developers>
+        <developer>
+            <id>pagui</id>
+            <name>Patrick Guillerm</name>
+            <email>patrickguillerm@gmail.com</email>
+        </developer>
+    </developers>
+
+    <scm>
+        <connection>https://github.com/pguillerm/open-content-contrib</connection>
+        <url>https://github.com/pguillerm/open-content-contrib</url>
+    </scm>
+
+
+    <!--
+     ============================================================================
+     = JAVADOC
+     ============================================================================
+   -->
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <version>2.8</version>
+                <configuration>
+                    <show>private</show>
+                    <nohelp>true</nohelp>
+                    <aggregate>true</aggregate>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>

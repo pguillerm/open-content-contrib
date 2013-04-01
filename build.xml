@@ -1,0 +1,31 @@
+<project name="openContentContrib" default="deploy" basedir=".">
+
+    <!--========================================================================
+    =                              PROPERTIES
+    =========================================================================-->
+    <property name="build.properties" value="build.properties"/>
+
+    <import file="antmacros.common.xml"/>
+
+    <!--========================================================================
+    =                              TARGETS
+    =========================================================================-->
+
+
+    <target name="deploy" depends="install-quick">
+        <delete>
+            <fileset dir="${deploy.dir}/">
+                <include name="*.failed"/>
+                <include name="*.dodeploy"/>
+                <include name="${project.name}*.war"/>
+            </fileset>
+        </delete>
+
+        <delete dir="${deploy.dir}/${project.name}.war" verbose="true"/>
+
+        <unzip src="${basedir}/${project.name}-features/${project.name}-war/target/${project.name}.war"
+               dest="${deploy.dir}/${project.name}.war"
+               overwrite="true"/>
+    </target>
+
+</project>

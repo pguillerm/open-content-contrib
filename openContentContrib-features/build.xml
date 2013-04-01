@@ -1,0 +1,9 @@
+<project name="openContentContrib-features" default="install" basedir=".">
+
+    <!--========================================================================
+    =                              PROPERTIES
+    =========================================================================-->
+    <property name="build.properties" value="build.properties"/>
+    <import file="../antmacros.common.xml"/>
+
+</project>
