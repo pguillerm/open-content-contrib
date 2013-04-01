@@ -10,8 +10,10 @@
 
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>open-content-contrib</groupId>
-    <artifactId>open-content-contrib</artifactId>
+
+    <groupId>org.open.content.contrib</groupId>
+    <artifactId>openContentContrib</artifactId>
+    <packaging>pom</packaging>
     <version>0.1-SNAPSHOT</version>
     <name>Open Content Contrib</name>
 
