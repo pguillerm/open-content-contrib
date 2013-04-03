@@ -1,0 +1,32 @@
+<project name="openContentContrib-war" default="install_and_deploy" basedir=".">
+
+	<!--========================================================================
+    =                              PROPERTIES
+    =========================================================================-->
+	<property name="build.properties" value="../../build.properties" />
+	<import file="../../antmacros.common.xml" />
+
+	<!--========================================================================
+    =                              TARGETS
+    =========================================================================-->
+
+
+	<target name="deploy">
+		<echo> deploy ${basedir}/target/${project.name}.war</echo>
+		<delete dir="${deploy.dir}${project.name}.war" verbose="true"/>
+				
+		<unzip	src="${basedir}/target/${project.name}.war"
+				dest="${deploy.dir}/${project.name}.war"
+				overwrite="true"/>
+	</target>
+
+	<target name="web">
+		<copy todir="${deploy.dir}/${project.name}.war/" >
+			<fileset dir="${basedir}/src/main/webapp" />
+		</copy>
+	</target>
+	
+	<target name="install_and_deploy" depends="install-quick,deploy"/>
+			
+
+</project>

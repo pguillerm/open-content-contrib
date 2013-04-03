@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<f:view xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:h="http://java.sun.com/jsf/html" 
+    xmlns:p="http://primefaces.org/ui"
+    xmlns:ui="http://java.sun.com/jsf/facelets">
+<f:verbatim>
+<!--[if IE 7]><html lang="fr" class="ie7"><![endif]-->
+<!--[if IE 8]><html lang="fr" class="ie8"><![endif]-->
+<!--[if gt IE 8]><html lang="fr" class="ie9"><![endif]-->
+<!--[if !IE]><!-->
+</f:verbatim>
+<html lang="fr">
+<f:verbatim>
+<!--<![endif]-->
+</f:verbatim>
+
+	<ui:remove>
+	<!--======================================================================== 
+	= HEAD
+	=========================================================================-->
+	</ui:remove>
+    <h:head>
+        <title><ui:insert name="page_title"/></title>
+        <meta charset="utf-8" />
+        <meta http-equiv="Content-Type" content="application/xhtml+xml" />
+        <meta http-equiv="imagetoolbar" content="no" />
+        <h:outputScript library="primefaces" name="jquery/jquery.js"/>
+        <script src="#{resource['scripts/bootstrap.min.js']}"></script>
+        <link href="#{resource['themes/bootstrap/css/bootstrap.min.css']}" type="text/css" rel="stylesheet" />
+        <link href="#{resource['themes/default/css/main.css']}" type="text/css" rel="stylesheet" />
+        <f:verbatim>
+        <!--[if IE]>
+            <script src="#{resource['scripts/html5.js']}"></script>
+        <![endif]-->
+        </f:verbatim>
+        <ui:insert name="head" />
+    </h:head>
+
+
+	<ui:remove>
+	<!--======================================================================== 
+	= BODY
+	=========================================================================-->
+	</ui:remove>    
+    <h:body id="body">
+         <ui:insert name="body" />
+    </h:body>
+
+</html>
+</f:view>

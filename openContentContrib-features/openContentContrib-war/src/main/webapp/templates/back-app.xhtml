@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:ui="http://java.sun.com/jsf/facelets" 
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:p="http://primefaces.org/ui"
+    template="/templates/back.xhtml"
+    id="back-app-template">
+    
+
+
+	<ui:remove>
+	<!--======================================================================== 
+	= BACK CONTENT
+	=========================================================================-->
+	</ui:remove>
+	<ui:define name="back_content">
+	
+		<nav id="main_content:row:nav" class="span2">
+			<div id="main_content:row:nav:content" class="well sidebar-nav">
+				<!--+++++++++++++++++++++++++++++++++++++++++++++++++-->
+					<ui:insert name="menu" />
+				<!--+++++++++++++++++++++++++++++++++++++++++++++++++-->
+			</div>
+		</nav>
+		
+		<div id="main_content:row:content" class="span8">
+			<!--+++++++++++++++++++++++++++++++++++++++++++++++++-->
+				<ui:insert name="content" />
+			<!--+++++++++++++++++++++++++++++++++++++++++++++++++-->
+		</div>
+				
+		<div id="main_content:row:content:side" class="span2">
+			<div id="main_content:row:content:side:nav" class="well sidebar-nav">
+				<!--+++++++++++++++++++++++++++++++++++++++++++++++++-->
+					<ui:insert name="side" />
+				<!--+++++++++++++++++++++++++++++++++++++++++++++++++-->
+			</div>
+		</div>
+		
+	</ui:define>
+
+</ui:composition>

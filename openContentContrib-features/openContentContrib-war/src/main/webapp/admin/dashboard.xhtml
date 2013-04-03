@@ -1,0 +1,88 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	template="/templates/back-dashboard.xhtml" id="front-home">
+
+	<ui:remove>
+		<!--======================================================================== 
+	= BODY
+	=========================================================================-->
+	</ui:remove>
+	<ui:define name="menu">
+	
+	menu
+	
+	</ui:define>
+
+
+
+	<ui:remove>
+		<!--======================================================================== 
+	= BODY
+	=========================================================================-->
+	</ui:remove>
+	<ui:define name="content">
+		<h:form id="dashboard_form">
+
+			<div class="row-fluid">
+				<p:panel id="last_comment"
+						 header="Les derniers commentaires"
+						 toggleable="true"
+						 toggleSpeed="500"
+						 widgetVar="last_comment"
+						 styleClass="span6">
+					
+							Les derniers commentaires
+						
+				</p:panel>
+				
+				<p:panel id="draft"
+					 header="Brouillons"
+					 toggleable="true"
+					 toggleSpeed="500"
+					 widgetVar="draft"
+					 styleClass="span6">
+				
+						Brouillons
+					
+				</p:panel>
+			
+			</div>
+			
+
+			
+
+
+			<div class="row-fluid">
+				<p:panel id="to_publish"
+						 header="A publier"
+						 toggleable="true"
+						 toggleSpeed="500"
+						 widgetVar="to_publish"
+						 styleClass="span6">
+					
+							A publier
+						
+				</p:panel>
+				
+				<p:panel id="last_topic"
+						 header="Les derniers ajout dans le forum"
+						 toggleable="true"
+						 toggleSpeed="500"
+						 widgetVar="last_topic"
+						 styleClass="span6">
+					
+							Dernier ajout dans le forum
+						
+				</p:panel>
+			</div>
+
+			
+
+		</h:form>
+	</ui:define>
+
+</ui:composition>

@@ -1,0 +1,76 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:ui="http://java.sun.com/jsf/facelets" 
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:p="http://primefaces.org/ui"
+    template="/templates/main.xhtml"
+    id="back-template">
+    
+
+	<ui:remove>
+	<!--======================================================================== 
+	= BODY
+	=========================================================================-->
+	</ui:remove>
+	<ui:define name="page_title">
+		JUV ADMIN
+	</ui:define>
+
+
+	<ui:remove>
+	<!--======================================================================== 
+	= BODY
+	=========================================================================-->
+	</ui:remove>
+	<ui:define name="body">
+	
+		<ui:remove>
+		<!--::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+		:: MAIN BANNER
+		:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::-->
+		</ui:remove>
+		<div id="main_banner" class="navbar navbar-inverse navbar-fixed-top">
+			<div id="main_banner:content"  class="navbar-inner">
+				<div id="main_banner:content:container"  class="container-fluid">
+					<a class="brand" href="#">Project name</a>
+					        
+					<div id="main_banner:content:container:nav"  class="nav-collapse collapse">
+						<p id="main_banner:content:container:nav:logged" class="navbar-text pull-right">
+							Logged in as <a href="#" class="navbar-link">Username</a>
+						</p>
+						          
+						          
+						<ul id="main_banner:content:container:nav:list" class="nav">
+							<li class="active"><a href="#">Home</a></li>
+							<li><a href="#about">About</a></li>
+							<li><a href="#contact">Contact</a></li>
+						</ul>
+					</div>
+				      
+				</div>
+			</div>
+		</div>
+		
+
+		<ui:remove>
+		<!--::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+		:: MAIN CONTENT
+		:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::-->
+		</ui:remove>
+		<div id="main_content" class="container-fluid content-container">
+			<div id="main_content:row" class="row-fluid">
+				<!--+++++++++++++++++++++++++++++++++++++++++++++++++-->
+					<ui:insert name="back_content" />
+				<!--+++++++++++++++++++++++++++++++++++++++++++++++++-->
+			</div>
+				
+			<div id="main_content:footer" class="row-fluid">				
+				<footer id="main_content:footer:content">
+					<p> Foobar corp Company 2013</p>
+				</footer>
+			</div>
+		</div>
+	</ui:define>
+
+</ui:composition>

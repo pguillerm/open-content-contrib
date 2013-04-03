@@ -152,7 +152,7 @@
                 <groupId>org.open.content.contrib</groupId>
                 <artifactId>openContentContrib-war</artifactId>
                 <version>${project.version}</version>
-                <type>jar</type>
+                <type>war</type>
             </dependency>
             
             
@@ -269,6 +269,11 @@
             + OTHERs DEPENDENCIES
             ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
             -->
+            <dependency>
+                <groupId>commons-digester</groupId>
+                <artifactId>commons-digester</artifactId>
+                <version>2.1</version>
+            </dependency>
 
             <dependency>
                 <groupId>org.freemarker</groupId>
@@ -336,32 +341,6 @@
       ============================================================================
     -->
     <dependencies>
-
-        <dependency>
-            <groupId>org.jboss.seam</groupId>
-            <artifactId>seam-parent</artifactId>
-            <scope>compile</scope>
-            <version>${seam-parent.version}</version>
-            <type>pom</type>
-        </dependency>
-
-        <dependency>
-            <groupId>org.modeshape.bom</groupId>
-            <artifactId>modeshape-bom-embedded</artifactId>
-            <version>${modeshape.version}</version>
-            <type>pom</type>
-            <scope>import</scope>
-        </dependency>
-
-
-        <dependency>
-            <groupId>org.jboss.seam</groupId>
-            <artifactId>seam-bom</artifactId>
-            <scope>compile</scope>
-            <version>${seam.version}</version>
-            <type>pom</type>
-        </dependency>
-
         <dependency>
             <groupId>org.jboss.spec</groupId>
             <artifactId>jboss-javaee-6.0</artifactId>

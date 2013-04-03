@@ -41,43 +41,14 @@
             <scope>provided</scope>
         </dependency>
 
-        <dependency>
-            <groupId>org.jboss.seam.persistence</groupId>
-            <artifactId>seam-persistence</artifactId>
-            <scope>provided</scope>
-            <exclusions>
-                <exclusion>
-                    <groupId>org.slf4j</groupId>
-                    <artifactId>slf4j-api</artifactId>
-                </exclusion>
-                <exclusion>
-                    <groupId>org.slf4j</groupId>
-                    <artifactId>slf4j-simple</artifactId>
-                </exclusion>
-            </exclusions>
-        </dependency>
-
-        <dependency>
-            <groupId>org.jboss.seam.validation</groupId>
-            <artifactId>seam-validation</artifactId>
-            <scope>provided</scope>
-            <exclusions>
-                <exclusion>
-                    <groupId>org.slf4j</groupId>
-                    <artifactId>slf4j-api</artifactId>
-                </exclusion>
-                <exclusion>
-                    <groupId>org.slf4j</groupId>
-                    <artifactId>slf4j-simple</artifactId>
-                </exclusion>
-            </exclusions>
-        </dependency>
-
+       
         <dependency>
             <groupId>org.jboss.seam.solder</groupId>
             <artifactId>seam-solder</artifactId>
+            <scope>provided</scope>
         </dependency>
 
+<!-- 
         <dependency>
             <groupId>org.jboss.seam.jcr</groupId>
             <artifactId>seam-jcr</artifactId>
@@ -99,7 +70,7 @@
             <artifactId>modeshape-common</artifactId>
         </dependency>
 
-        
+      -->   
         <!--:::::::::::::::::::::::: test dependency :::::::::::::::::::::::::::::-->
         <dependency>
             <groupId>org.open.content.contrib</groupId>

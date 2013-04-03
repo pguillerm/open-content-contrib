@@ -24,16 +24,6 @@
   -->
   <dependencies>
 
-        <dependency>
-            <groupId>org.jboss.seam.servlet</groupId>
-            <artifactId>seam-servlet</artifactId>
-            <exclusions>
-                <exclusion>
-                    <groupId>com.google.collections</groupId>
-                    <artifactId>google-collections</artifactId>
-                </exclusion>
-            </exclusions>
-        </dependency>
 
 
         <dependency>
